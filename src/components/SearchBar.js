@@ -1,11 +1,28 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
+  state = { term: '' };
+
+  onFormSubmit = (event) => {
+    // arrow function to fix the 'this' bug
+    event.preventDefault();
+    console.log(this.state.term);
+  };
+
   render() {
     return (
-      <div>
-        <form>
-          <input type="text" placeholder="Search" />
+      <div className="ui segment">
+        <form className="ui form" onSubmit={this.onFormSubmit}>
+          <div className="field">
+            <label>Image Search</label>
+            <input
+              type="text"
+              value={this.state.term}
+              onChange={(e) => {
+                this.setState({ term: e.target.value });
+              }}
+            />
+          </div>
         </form>
       </div>
     );
