@@ -32,6 +32,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-one-expression-per-line": "off",
     "react/destructuring-assignment": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/prefer-stateless-function": [0, { "ignorePureComponents": true }]
   }
 }
